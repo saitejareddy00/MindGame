@@ -30,13 +30,12 @@ const Trick = (props) => {
     spacing={2}
    >
     <Typography pt={5} px={5}>
-     Choose any two digit Number , add together both digits and then substract
-     the number from your original Number
+     Choose any two digit Number from the shown chart, add together both digits and then substract
+     the number from your original Number and remember the symbol beside it. Then click on reveal button to see the magic
     </Typography>
 
     <Typography px={5}>
-     For Example if you choose 32: 3+2 = 5 and 32-5 = 27 The sign beside 27 is
-     your answer
+     For Example if you choose 32: 3+2 = 5 and 32-5 = 27 remember the sign beside it and click on reveal button
     </Typography>
     <Button
      onClick={() => setOpen(true)}
