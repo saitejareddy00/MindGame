@@ -51,7 +51,7 @@ const GetRandomSigns = () => {
  const shuffle = (array) => array.sort(() => Math.random() - 0.5);
  let chillar = shuffle(signs);
  const magicSign = chillar[0];
- chillar.shift();
+//  chillar.shift();
  let finalChillar = [];
 
  for (let i = 0; i < 100; i++) {
