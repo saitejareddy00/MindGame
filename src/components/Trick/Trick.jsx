@@ -35,7 +35,8 @@ const Trick = (props) => {
     </Typography>
 
     <Typography px={5}>
-     For Example if you choose 32: 3+2 = 5 and 32-5 = 27 remember the sign beside it and click on reveal button
+     For Example if you choose 32: 3+2 = 5 and 32-5 = 27 remember the sign beside it and click on reveal button..
+Designed by srinivas Reddy chirra
     </Typography>
     <Button
      onClick={() => setOpen(true)}
