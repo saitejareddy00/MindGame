@@ -25,6 +25,7 @@ function App() {
      <DisplayTable chillars={chillars} newGame={newGame} />
     </Grid>
    </Grid>
+Designed by Teja 
   </Box>
  );
 }
