@@ -1,31 +1,73 @@
 import "./App.css";
-import { Box, Grid } from "@mui/material";
-import DisplayTable from "./components/displayTable/DisplayTable";
-import MyAppBar from "./components/MyAppBar/MyAppBar";
-import Trick from "./components/Trick/Trick";
-import { useEffect, useState } from "react";
-import GetRandomSigns from "./constants/ZodiacSigns";
+import { Box, } from "@mui/material";
+import {  useRoutes } from 'react-router-dom';
+
+import MindGame from "./pages/mindGame/MindGame";
+import { ProposalPage } from "./pages/mindGame/Proposal";
+import { DatePage } from "./pages/mindGame/CanWeGoOnADate";
+import { Restaurant } from "./pages/mindGame/Restaurant";
+import { FinalPage } from "./pages/mindGame/FinalPage";
 function App() {
- const [chillars, setChillars] = useState();
- const [magicSign, setMagicSign] = useState();
- const [newGame, setNewGame] = useState(false);
- useEffect(() => {
-  const { magicSign, chillars } = GetRandomSigns();
-  setChillars(chillars);
-  setMagicSign(magicSign);
- }, [newGame]);
+  const routes =[{
+    id: '0',
+    name: 'home',
+    path: '/',
+    showInSideNav: false,
+    element: (
+      <p>home</p>
+    )
+  },{
+    id: '1',
+    name: 'mindgame',
+    path: '/mindgame',
+    showInSideNav: false,
+    element: (
+      <MindGame />
+    )
+  },
+  {
+    id: '2',
+    name: 'date',
+    path: '/date',
+    showInSideNav: false,
+    element: (
+      <DatePage />
+    )
+  },
+  {
+    id: '3',
+    name: 'restaurant',
+    path: '/restaurant',
+    showInSideNav: false,
+    element: (
+      <Restaurant />
+    )
+  },
+  {
+    id: '4',
+    name: 'proposal',
+    path: '/proposal',
+    showInSideNav: false,
+    element: (
+      <ProposalPage />
+    )
+  },
+  {
+    id: '4',
+    name: 'finalPage',
+    path: '/finalPage',
+    showInSideNav: false,
+    element: (
+      <FinalPage />
+    )
+  }
+]
+
+  const Content = useRoutes(routes)
+
  return (
-  <Box height="100vh">
-   <MyAppBar setNewGame={setNewGame} />
-   <Grid container spacing={{ xs: 2, lg: 10 }}>
-    <Grid item lg={6} xs={12}>
-     <Trick magicSign={magicSign} setNewGame={setNewGame} />
-    </Grid>
-    <Grid item xs={12} lg={6} md={10}>
-     <DisplayTable chillars={chillars} newGame={newGame} />
-    </Grid>
-   </Grid>
-Designed by Teja 
+  <Box height="100vh" pb={4}>
+     {Content}
   </Box>
  );
 }
