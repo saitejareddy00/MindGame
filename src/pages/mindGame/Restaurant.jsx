@@ -1,9 +1,10 @@
 import { useState } from "react";
 import ifno from "../../assets/bubu/ifnogif.gif";
-import eating from '../../assets/bubu/food.gif'
-import bubuHappy from '../../assets/bubu/bubuhappy.jpg'
-import { Box, Stack, } from "@mui/material";
+import eating from "../../assets/bubu/food.gif";
+import bubuHappy from "../../assets/bubu/bubuhappy.jpg";
+import { Box, Stack } from "@mui/material";
 import { useNavigate } from "react-router";
+import { CustomImage } from "../../components/CustomImage";
 
 const getRandom = () => {
   const x = Math.floor(Math.random() * 600 + 1);
@@ -13,39 +14,48 @@ const getRandom = () => {
 };
 
 const Restaurant = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
   const [ordinates, setordinates] = useState({ x: 0, y: 0 });
-  const [accepted,setAccepted] = useState(false)
-  let image = accepted?bubuHappy:eating
-  const [ifNo,setIfNO] = useState(false);
-  if(ifNo){
-    image = ifno
+  const [accepted, setAccepted] = useState(false);
+  let image = accepted ? bubuHappy : eating;
+  const [ifNo, setIfNO] = useState(false);
+  if (ifNo) {
+    image = ifno;
   }
 
-  const onClickHandler = ()=>{
-    setAccepted(true)
+  const onClickHandler = () => {
+    setAccepted(true);
     setHovered(false);
     setordinates({ x: 0, y: 0 });
-    setTimeout(()=>navigate('/proposal'),4000)
-  }
+    setTimeout(() => navigate("/proposal"), 4000);
+  };
 
   const onMouseEntered = () => {
-    if(!accepted){
-        setHovered(true);
-        setIfNO(true)
-        setordinates(getRandom());
+    if (!accepted) {
+      setHovered(true);
+      setIfNO(true);
+      setordinates(getRandom());
     }
   };
 
   return (
-    <Box sx={{height:'100vh',width:'100vw',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
-        {accepted&&<h1 className="thankyouzoom">Thank you</h1>}
+    <Box
+      sx={{
+        height: "100%",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      {accepted && <h1 className="thankyouzoom">Thank you</h1>}
       <Box>
-        <img src={image} className="logo" alt="Vite logo" height="600px" />
+        <CustomImage imageSrc={image} />
       </Box>
-      <h1>{'Eat What ever you want!'}</h1>
-      <h2>{accepted?'yayyyy':'can i ask you something??'}</h2>
+      <h1>{"Eat What ever you want!"}</h1>
+      <h2>{accepted ? "yayyyy" : "can i ask you something??"}</h2>
       <Stack direction="row" gap={2} justifyContent="center">
         <button onClick={onClickHandler}>yes Obviously</button>
         <button
@@ -57,7 +67,7 @@ const Restaurant = () => {
           }}
           onMouseEnter={onMouseEntered}
           onClick={onMouseEntered}
-          onMouseLeave={()=>setTimeout(()=>setIfNO(false),1000)}
+          onMouseLeave={() => setTimeout(() => setIfNO(false), 2000)}
         >
           No Not at all
         </button>

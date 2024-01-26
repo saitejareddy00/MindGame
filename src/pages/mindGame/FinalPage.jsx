@@ -1,17 +1,23 @@
 import { TypeAnimation } from "react-type-animation";
 import { text } from "../../constants/loveLetter";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import bg from "../../assets/background.jpeg";
 
 const FinalPage = () => {
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const RenderTextAsTyping = () => {
     return (
       <Box>
-        <img src={bg} alt="ahda" className="fixedImage" />
+        <img
+          src={bg}
+          alt="ahda"
+          className={smallScreen ? "fixedImage-small" : "fixedImage"}
+        />
         <Box
           sx={{
-            width: "100vw",
-            height: "100vh",
+            width: "100%",
+            height: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -22,7 +28,7 @@ const FinalPage = () => {
               style={{
                 padding: "15px",
                 whiteSpace: "pre-line",
-                height: "700px",
+                height: "100%",
                 display: "block",
                 fontFamily: "monospace",
                 fontSize: "20px",

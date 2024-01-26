@@ -7,6 +7,7 @@ import { ProposalPage } from "./pages/mindGame/Proposal";
 import { DatePage } from "./pages/mindGame/CanWeGoOnADate";
 import { Restaurant } from "./pages/mindGame/Restaurant";
 import { FinalPage } from "./pages/mindGame/FinalPage";
+import { HomePage } from "./pages/mindGame/HomePage";
 function App() {
   const routes =[{
     id: '0',
@@ -14,7 +15,7 @@ function App() {
     path: '/',
     showInSideNav: false,
     element: (
-      <p>home</p>
+      <HomePage />
     )
   },{
     id: '1',
@@ -66,7 +67,7 @@ function App() {
   const Content = useRoutes(routes)
 
  return (
-  <Box height="100vh" pb={4}>
+  <Box  sx={{m:{md:0,xs:2},width:{md:'100vw'}}}>
      {Content}
   </Box>
  );
