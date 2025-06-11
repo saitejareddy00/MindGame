@@ -3,10 +3,6 @@ import { Box, } from "@mui/material";
 import {  useRoutes } from 'react-router-dom';
 
 import MindGame from "./pages/mindGame/MindGame";
-import { ProposalPage } from "./pages/mindGame/Proposal";
-import { DatePage } from "./pages/mindGame/CanWeGoOnADate";
-import { Restaurant } from "./pages/mindGame/Restaurant";
-import { FinalPage } from "./pages/mindGame/FinalPage";
 import { HomePage } from "./pages/mindGame/HomePage";
 function App() {
   const routes =[{
