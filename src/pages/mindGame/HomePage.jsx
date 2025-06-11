@@ -17,12 +17,6 @@ const HomePage = () => {
         >
           Game
         </Link>
-        <Link
-          onClick={() => navigate("date")}
-          sx={{ fontSize: "100px", textDecoration: "none", color: "white" }}
-        >
-          Date
-        </Link>
       </Stack>
     </Stack>
   );
