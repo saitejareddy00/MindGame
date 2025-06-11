@@ -25,42 +25,6 @@ function App() {
     element: (
       <MindGame />
     )
-  },
-  {
-    id: '2',
-    name: 'date',
-    path: '/date',
-    showInSideNav: false,
-    element: (
-      <DatePage />
-    )
-  },
-  {
-    id: '3',
-    name: 'restaurant',
-    path: '/restaurant',
-    showInSideNav: false,
-    element: (
-      <Restaurant />
-    )
-  },
-  {
-    id: '4',
-    name: 'proposal',
-    path: '/proposal',
-    showInSideNav: false,
-    element: (
-      <ProposalPage />
-    )
-  },
-  {
-    id: '4',
-    name: 'finalPage',
-    path: '/finalPage',
-    showInSideNav: false,
-    element: (
-      <FinalPage />
-    )
   }
 ]
 
